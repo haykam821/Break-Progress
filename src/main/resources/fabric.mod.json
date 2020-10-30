@@ -1,0 +1,30 @@
+{
+	"schemaVersion": 1,
+	"id": "breakprogress",
+	"version": "${version}",
+	"name": "Break Progress",
+	"description": "Adds break progress to WAILA.",
+	"authors": [
+		"haykam821"
+	],
+	"contact": {
+		"homepage": "https://github.com/haykam821/Break-Progress#readme",
+		"issues": "https://github.com/haykam821/Break-Progress/issues"
+	},
+	"mixins": [
+		"breakprogress.mixin.json"
+	],
+	"custom": {
+		"waila:plugins": {
+			"id": "breakprogress:break_progress",
+			"initializer": "io.github.haykam821.breakprogress.BreakProgressWailaPlugin"
+		}
+	},
+	"license": "MIT",
+	"icon": "assets/breakprogress/icon.png",
+	"depends": {
+		"fabricloader": ">=0.4.0",
+		"fabric-resource-loader-v0": "*",
+		"waila": "*"
+	}
+}
