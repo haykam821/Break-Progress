@@ -2,7 +2,7 @@
 	"required": true,
 	"package": "io.github.haykam821.breakprogress.mixin",
 	"compatibilityLevel": "JAVA_8",
-	"mixins": [
+	"client": [
 		"ClientPlayerInteractionManagerMixin"
 	],
 	"injectors": {

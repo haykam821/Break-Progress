@@ -11,6 +11,7 @@
 		"homepage": "https://github.com/haykam821/Break-Progress#readme",
 		"issues": "https://github.com/haykam821/Break-Progress/issues"
 	},
+	"environment": "client",
 	"mixins": [
 		"breakprogress.mixin.json"
 	],
