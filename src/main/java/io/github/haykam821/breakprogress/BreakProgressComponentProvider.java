@@ -10,6 +10,7 @@ import net.minecraft.client.MinecraftClient;
 import net.minecraft.text.Text;
 import net.minecraft.text.TranslatableText;
 
+@SuppressWarnings("deprecation")
 public class BreakProgressComponentProvider implements IComponentProvider {
 	private static final MinecraftClient CLIENT = MinecraftClient.getInstance();
 

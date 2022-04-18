@@ -1,5 +1,5 @@
 plugins {
-	id "fabric-loom" version "0.7-SNAPSHOT"
+	id "fabric-loom" version "0.11.32"
 	id "maven-publish"
 }
 
@@ -16,8 +16,8 @@ repositories {
 		url = "https://maven.fabricmc.net/"
 	}
 	maven {
-		name = "TehNut"
-		url = "https://maven.tehnut.info"
+		name = "Deirn"
+		url = "https://maven.bai.lol"
 	}
 	jcenter()
 }
@@ -30,9 +30,11 @@ dependencies {
 
 	// Fabric API (Resource Loader)
 	modImplementation(fabricApi.module("fabric-resource-loader-v0", project.fabric_version))
+	modRuntimeOnly("net.fabricmc.fabric-api:fabric-api:${project.fabric_version}")
 
-	// HWYLA
-	modImplementation("mcp.mobius.waila:Hwyla:${project.hwyla_version}")
+	// WTHIT
+	modCompileOnly("mcp.mobius.waila:wthit-api:fabric-${project.wthit_version}")
+	modRuntimeOnly("mcp.mobius.waila:wthit:fabric-${project.wthit_version}")
 }
 
 processResources {
