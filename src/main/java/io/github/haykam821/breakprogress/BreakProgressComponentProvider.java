@@ -1,6 +1,5 @@
 package io.github.haykam821.breakprogress;
 
-import io.github.haykam821.breakprogress.mixin.ClientPlayerInteractionManagerMixin;
 import mcp.mobius.waila.api.IBlockAccessor;
 import mcp.mobius.waila.api.IBlockComponentProvider;
 import mcp.mobius.waila.api.IPluginConfig;
@@ -13,7 +12,7 @@ public class BreakProgressComponentProvider implements IBlockComponentProvider {
 
 	@Override
 	public void appendTail(ITooltip tooltip, IBlockAccessor accessor, IPluginConfig config) {
-		int progress = (int) (((ClientPlayerInteractionManagerMixin) CLIENT.interactionManager).getCurrentBreakingProgress() * 100);
+		int progress = ((BreakProgressTracker) CLIENT.interactionManager).getBreakProgressPercent(CLIENT.getTickDelta());
 		if (progress > 0) {
 			tooltip.addLine(Text.translatable("text.breakprogress.tooltip", progress));
 		}
