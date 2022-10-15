@@ -8,6 +8,6 @@ import net.minecraft.block.Block;
 public class BreakProgressWailaPlugin implements IWailaPlugin {
 	@Override
     public void register(IRegistrar registrar) {
-		registrar.registerComponentProvider(new BreakProgressComponentProvider(), TooltipPosition.TAIL, Block.class);
+		registrar.addComponent(new BreakProgressComponentProvider(), TooltipPosition.TAIL, Block.class);
 	}
 }

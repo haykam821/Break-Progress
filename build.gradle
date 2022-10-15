@@ -1,10 +1,10 @@
 plugins {
-	id "fabric-loom" version "0.5-SNAPSHOT"
+	id "fabric-loom" version "0.12.48"
 	id "maven-publish"
 }
 
-sourceCompatibility = JavaVersion.VERSION_1_8
-targetCompatibility = JavaVersion.VERSION_1_8
+sourceCompatibility = JavaVersion.VERSION_17
+targetCompatibility = JavaVersion.VERSION_17
 
 archivesBaseName = project.archives_base_name
 version = project.mod_version
@@ -16,10 +16,9 @@ repositories {
 		url = "https://maven.fabricmc.net/"
 	}
 	maven {
-		name = "TehNut"
-		url = "https://maven.tehnut.info"
+		name = "Deirn"
+		url = "https://maven.bai.lol"
 	}
-	jcenter()
 }
 
 dependencies {
@@ -30,21 +29,18 @@ dependencies {
 
 	// Fabric API (Resource Loader)
 	modImplementation(fabricApi.module("fabric-resource-loader-v0", project.fabric_version))
+	modRuntimeOnly("net.fabricmc.fabric-api:fabric-api:${project.fabric_version}")
 
-	// HWYLA
-	modImplementation("mcp.mobius.waila:Hwyla:${project.hwyla_version}")
+	// WTHIT
+	modCompileOnly("mcp.mobius.waila:wthit-api:fabric-${project.wthit_version}")
+	modRuntimeOnly("mcp.mobius.waila:wthit:fabric-${project.wthit_version}")
 }
 
 processResources {
 	inputs.property "version", project.version
 
-	from(sourceSets.main.resources.srcDirs) {
-		include "fabric.mod.json"
+	filesMatching("fabric.mod.json") {
 		expand "version": project.version
-	}
-
-	from(sourceSets.main.resources.srcDirs) {
-		exclude "fabric.mod.json"
 	}
 }
 
